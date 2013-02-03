@@ -30,6 +30,7 @@
 		CE2E346C16BDE1F400512E00 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346B16BDE1F400512E00 /* MobileCoreServices.framework */; };
 		CE2E346E16BDE1FD00512E00 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346D16BDE1FD00512E00 /* Security.framework */; };
 		CE2E347116BDE3B000512E00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */; };
+		CE2E347416BE988700512E00 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E347316BE988700512E00 /* Venue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		CE2E346B16BDE1F400512E00 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		CE2E346D16BDE1FD00512E00 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CE2E347216BE988700512E00 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		CE2E347316BE988700512E00 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 		CE2E340016BDDE6200512E00 = {
 			isa = PBXGroup;
 			children = (
+				CE2E347216BE988700512E00 /* Venue.h */,
+				CE2E347316BE988700512E00 /* Venue.m */,
 				CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */,
 				CE2E346D16BDE1FD00512E00 /* Security.framework */,
 				CE2E346B16BDE1F400512E00 /* MobileCoreServices.framework */,
@@ -387,6 +392,7 @@
 				CE2E342016BDDE6200512E00 /* AppDelegate.m in Sources */,
 				CE2E342C16BDDE6200512E00 /* MasterViewController.m in Sources */,
 				CE2E342F16BDDE6200512E00 /* DetailViewController.m in Sources */,
+				CE2E347416BE988700512E00 /* Venue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,12 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import <RestKit/RestKit.h>
+#import "Venue.h"
+
+#define kCLIENTID "Your Foursquare Client ID"
+#define kCLIENTSECRET "Your Foursquare Client Secret"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -25,12 +29,60 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
+    
+    [self sendRequest];
 }
+
+- (void) sendRequest
+{
+    /*
+    NSString *latLon = @"37.33,-122.03";
+    NSString *clientID = [NSString stringWithUTF8String: kCLIENTID];
+    NSString *clientSecret = [NSString stringWithUTF8String: kCLIENTSECRET];
+    */
+    
+    NSString *urlString = @"https://api.Foursquare.com/v2/venues/search?ll=37.33,-122.03&categoryId=4bf58dd8d48988d1e0931735&limit=2&oauth_token=SH13UK04JAJT0RLKT335KODAFRDXJKC4RCEMQZKSIFHZ44ZU&v=20120506";
+    
+    RKObjectMapping *venueMapping = [RKObjectMapping mappingForClass:[Venue class]];
+    [venueMapping addAttributeMappingsFromDictionary: @{@"name" : @"name"}];
+  
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping pathPattern:nil keyPath:@"response.venues" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    
+    NSURL *URL = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    
+    
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        RKLogInfo(@"Load collection of Articles: %@", mappingResult.array);
+        _objects = [mappingResult.array mutableCopy];
+        [self.tableView reloadData];
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        RKLogError(@"Operation failed with error: %@", error);
+    }];
+    
+     
+    [objectRequestOperation start];
+    
+
+    
+    
+    
+    
+    
+}
+    
+ 
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -38,15 +90,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+//- (void)insertNewObject:(id)sender
+//{
+//    if (!_objects) {
+//        _objects = [[NSMutableArray alloc] init];
+//    }
+//    [_objects insertObject:[NSDate date] atIndex:0];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
 
 #pragma mark - Table View
 
@@ -64,8 +116,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    Venue *venue = _objects[indexPath.row];
+    cell.textLabel.text = [venue name];
     return cell;
 }
 
@@ -75,7 +127,7 @@
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+/* - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [_objects removeObjectAtIndex:indexPath.row];
@@ -83,7 +135,7 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
-}
+} */
 
 /*
 // Override to support rearranging the table view.
