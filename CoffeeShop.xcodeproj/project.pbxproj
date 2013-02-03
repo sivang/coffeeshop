@@ -29,7 +29,7 @@
 		CE2E346A16BDE1EB00512E00 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346916BDE1EB00512E00 /* CoreData.framework */; };
 		CE2E346C16BDE1F400512E00 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346B16BDE1F400512E00 /* MobileCoreServices.framework */; };
 		CE2E346E16BDE1FD00512E00 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346D16BDE1FD00512E00 /* Security.framework */; };
-		CE2E347016BDE20A00512E00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */; };
+		CE2E347116BDE3B000512E00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2E347016BDE20A00512E00 /* SystemConfiguration.framework in Frameworks */,
+				CE2E347116BDE3B000512E00 /* SystemConfiguration.framework in Frameworks */,
 				CE2E346E16BDE1FD00512E00 /* Security.framework in Frameworks */,
 				CE2E346C16BDE1F400512E00 /* MobileCoreServices.framework in Frameworks */,
 				CE2E346A16BDE1EB00512E00 /* CoreData.framework in Frameworks */,
