@@ -24,6 +24,12 @@
 		CE2E343916BDDE6300512E00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E341116BDDE6200512E00 /* Foundation.framework */; };
 		CE2E344116BDDE6300512E00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE2E343F16BDDE6300512E00 /* InfoPlist.strings */; };
 		CE2E344416BDDE6300512E00 /* CoffeeShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2E344316BDDE6300512E00 /* CoffeeShopTests.m */; };
+		CE2E346616BDE1B000512E00 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E345C16BDDFEB00512E00 /* libRestKit.a */; };
+		CE2E346816BDE1E300512E00 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346716BDE1E300512E00 /* CFNetwork.framework */; };
+		CE2E346A16BDE1EB00512E00 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346916BDE1EB00512E00 /* CoreData.framework */; };
+		CE2E346C16BDE1F400512E00 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346B16BDE1F400512E00 /* MobileCoreServices.framework */; };
+		CE2E346E16BDE1FD00512E00 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346D16BDE1FD00512E00 /* Security.framework */; };
+		CE2E347016BDE20A00512E00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = CE2E340A16BDDE6200512E00;
 			remoteInfo = CoffeeShop;
+		};
+		CE2E345B16BDDFEB00512E00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		CE2E345D16BDDFEB00512E00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		CE2E345F16BDDFEB00512E00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		CE2E346116BDDFEB00512E00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		CE2E346416BDE15F00512E00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,6 +102,12 @@
 		CE2E344016BDDE6300512E00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE2E344216BDDE6300512E00 /* CoffeeShopTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoffeeShopTests.h; sourceTree = "<group>"; };
 		CE2E344316BDDE6300512E00 /* CoffeeShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeShopTests.m; sourceTree = "<group>"; };
+		CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		CE2E346716BDE1E300512E00 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CE2E346916BDE1EB00512E00 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE2E346B16BDE1F400512E00 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CE2E346D16BDE1FD00512E00 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +115,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2E347016BDE20A00512E00 /* SystemConfiguration.framework in Frameworks */,
+				CE2E346E16BDE1FD00512E00 /* Security.framework in Frameworks */,
+				CE2E346C16BDE1F400512E00 /* MobileCoreServices.framework in Frameworks */,
+				CE2E346A16BDE1EB00512E00 /* CoreData.framework in Frameworks */,
+				CE2E346816BDE1E300512E00 /* CFNetwork.framework in Frameworks */,
+				CE2E346616BDE1B000512E00 /* libRestKit.a in Frameworks */,
 				CE2E341016BDDE6200512E00 /* UIKit.framework in Frameworks */,
 				CE2E341216BDDE6200512E00 /* Foundation.framework in Frameworks */,
 				CE2E341416BDDE6200512E00 /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +143,12 @@
 		CE2E340016BDDE6200512E00 = {
 			isa = PBXGroup;
 			children = (
+				CE2E346F16BDE20A00512E00 /* SystemConfiguration.framework */,
+				CE2E346D16BDE1FD00512E00 /* Security.framework */,
+				CE2E346B16BDE1F400512E00 /* MobileCoreServices.framework */,
+				CE2E346916BDE1EB00512E00 /* CoreData.framework */,
+				CE2E346716BDE1E300512E00 /* CFNetwork.framework */,
+				CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */,
 				CE2E341516BDDE6200512E00 /* CoffeeShop */,
 				CE2E343C16BDDE6300512E00 /* CoffeeShopTests */,
 				CE2E340E16BDDE6200512E00 /* Frameworks */,
@@ -165,6 +224,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CE2E345216BDDFEB00512E00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE2E345C16BDDFEB00512E00 /* libRestKit.a */,
+				CE2E345E16BDDFEB00512E00 /* RestKitTests.octest */,
+				CE2E346016BDDFEB00512E00 /* RestKit.framework */,
+				CE2E346216BDDFEB00512E00 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +249,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CE2E346516BDE15F00512E00 /* PBXTargetDependency */,
 			);
 			name = CoffeeShop;
 			productName = CoffeeShop;
@@ -223,6 +294,12 @@
 			mainGroup = CE2E340016BDDE6200512E00;
 			productRefGroup = CE2E340C16BDDE6200512E00 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE2E345216BDDFEB00512E00 /* Products */;
+					ProjectRef = CE2E345116BDDFEB00512E00 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CE2E340A16BDDE6200512E00 /* CoffeeShop */,
@@ -230,6 +307,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CE2E345C16BDDFEB00512E00 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = CE2E345B16BDDFEB00512E00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE2E345E16BDDFEB00512E00 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = CE2E345D16BDDFEB00512E00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE2E346016BDDFEB00512E00 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = CE2E345F16BDDFEB00512E00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE2E346216BDDFEB00512E00 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = CE2E346116BDDFEB00512E00 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE2E340916BDDE6200512E00 /* Resources */ = {
@@ -297,6 +405,11 @@
 			isa = PBXTargetDependency;
 			target = CE2E340A16BDDE6200512E00 /* CoffeeShop */;
 			targetProxy = CE2E343A16BDDE6300512E00 /* PBXContainerItemProxy */;
+		};
+		CE2E346516BDE15F00512E00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = CE2E346416BDE15F00512E00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -383,7 +496,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoffeeShop/CoffeeShop-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "CoffeeShop/CoffeeShop-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,7 +512,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoffeeShop/CoffeeShop-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "CoffeeShop/CoffeeShop-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +576,7 @@
 				CE2E344916BDDE6300512E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE2E344A16BDDE6300512E00 /* Build configuration list for PBXNativeTarget "CoffeeShopTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +585,7 @@
 				CE2E344C16BDDE6300512E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
