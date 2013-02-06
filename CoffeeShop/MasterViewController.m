@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import <RestKit/RestKit.h>
 #import "Venue.h"
+#import "VenueCell.h"
 
 #define kCLIENTID "Your Foursquare Client ID"
 #define kCLIENTSECRET "Your Foursquare Client Secret"
@@ -49,11 +50,32 @@
     NSString *clientSecret = [NSString stringWithUTF8String: kCLIENTSECRET];
     */
     
-    NSString *urlString = @"https://api.Foursquare.com/v2/venues/search?ll=37.33,-122.03&categoryId=4bf58dd8d48988d1e0931735&limit=2&oauth_token=SH13UK04JAJT0RLKT335KODAFRDXJKC4RCEMQZKSIFHZ44ZU&v=20120506";
+    NSString *urlString = @"https://api.Foursquare.com/v2/venues/search?ll=32.49,35.03&categoryId=4bf58dd8d48988d1e0931735&limit=15&oauth_token=SH13UK04JAJT0RLKT335KODAFRDXJKC4RCEMQZKSIFHZ44ZU&v=20120506";
     
     RKObjectMapping *venueMapping = [RKObjectMapping mappingForClass:[Venue class]];
     [venueMapping addAttributeMappingsFromDictionary: @{@"name" : @"name"}];
-  
+    
+    RKObjectMapping *locationMapping = [RKObjectMapping mappingForClass:[Location class]];
+    [locationMapping addAttributeMappingsFromDictionary: @{
+     @"address": @"address",
+     @"city": @"city",
+     @"country": @"country",
+     @"crossStreet" : @"crossStreet",
+     @"postalCode" : @"postalCode",
+     @"state" : @"state",
+     @"distance" : @"distance",
+     @"lat" : @"lat",
+     @"lng" : @"lng"}];
+    
+    RKObjectMapping *statsMapping = [RKObjectMapping mappingForClass:[Stats class]];
+    [statsMapping addAttributeMappingsFromDictionary:@{@"checkinsCount": @"checkins",
+     @"tipCount": @"tips",
+     @"usersCount": @"users"}];
+    
+
+    [venueMapping addRelationshipMappingWithSourceKeyPath:@"location" mapping:locationMapping];
+    [venueMapping addRelationshipMappingWithSourceKeyPath:@"stats" mapping:statsMapping];
+    
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping pathPattern:nil keyPath:@"response.venues" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
     NSURL *URL = [NSURL URLWithString:urlString];
@@ -70,14 +92,9 @@
         RKLogError(@"Operation failed with error: %@", error);
     }];
     
+    
      
     [objectRequestOperation start];
-    
-
-    
-    
-    
-    
     
 }
     
@@ -114,10 +131,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    Venue *venue = _objects[indexPath.row];
-    cell.textLabel.text = [venue name];
+    VenueCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VenueCell" forIndexPath:indexPath];
+    Venue *venue = [_objects objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [venue.name length] > 25 ? [venue.name substringToIndex:25] : venue.name;
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%.0fm", [venue.location.distance floatValue]];
+    cell.checkinsLabel.text = [NSString stringWithFormat:@"%d checkins", [venue.stats.checkins intValue]];
+    
     return cell;
 }
 

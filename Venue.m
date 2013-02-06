@@ -11,7 +11,7 @@
 @implementation Venue
 
 @synthesize name;
-
+@synthesize stats;
 
 
 @end
